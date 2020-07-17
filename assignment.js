@@ -29,19 +29,37 @@ console.log(calculator)
 
 // brickCalculator
 
-var tola = 20;
-if (tola <= 10) {
-        var brick = tola * 1500;
-        console.log(brick);
-    } 
-    else if (tola <= 20){
-        var brick1 = tola * 1200;
-        console.log(brick1);
+function brickCalculator(numberOfFloor){
+    if(numberOfFloor < 11 && numberOfFloor > 0){
+        var firstTenFloor = numberOfFloor * 15 * 1000;
+        var outPut = "Bricks You Need";
+        var outPut2 = outPut +" "+ firstTenFloor
+        return outPut2;
+        
+    }
+    else if(numberOfFloor > 10 && numberOfFloor < 21){
+    var secondTenFloors1 = (numberOfFloor - 10) * 12 * 1000;
+    var firstTenFloors2 = 150000 ; // 10 * 15 * 1000
+    var totalBricks1 = secondTenFloors1 + firstTenFloors2 ;
+    var outPut = "You Need";
+    var outPut2 = outPut +" "+ totalBricks1
+    return outPut2;
+    }
+    else if(numberOfFloor > 20 ){
+    var highestFloors = (numberOfFloor - 20) * 10 * 1000;
+    var secondTenFloors2 = 120000 ;// 10 * 12 * 1000
+    var firstTenFloors3 = 150000 ; // 10 * 15 * 1000
+    totalBricks2 = highestFloors + secondTenFloors2 + firstTenFloors3;
+    var outPut = "Bricks You need";
+    var outPut2 =  outPut +" "+totalBricks2;
+    return outPut2 ;
     }
     else{
-        var brick2 = tola * 1000;
-        console.log(brick2);
+        return "Put a valid number of floor "
     }
+    }
+    var result = brickCalculator(10);
+     console.log(result)
 
 
 
